@@ -1,0 +1,1272 @@
+:root {
+  /* colors */
+  --white: #f8f8f8;
+  --light-gray: #ecebeb;
+  --red: #EF3C3C;
+  --black: #333333;
+
+  /* typos */
+  --main-font: Italiana;
+}
+
+/* --- Reset --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* --- all --- */
+html,
+body {
+  background-color: var(--white);
+  scrollbar-color: var(--red) var(--white);
+  scrollbar-width: thin;
+  scroll-behavior: smooth;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 0px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--white);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--red);
+  border-radius: 5px;
+}
+
+h1::selection,
+h2::selection,
+h3::selection,
+h4::selection,
+h5::selection,
+h6::selection,
+p::selection,
+a::selection,
+span::selection {
+  opacity: 1;
+  background-color: var(--red);
+  color: var(--white);
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--main-font);
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+/* --- --- Hero Section --- --- */
+#hero {
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+}
+
+#background-hero {
+  z-index: 1;
+  min-width: 100vw;
+  min-height: 100vh;
+  background-image: url("../img/hero-background.webp");
+  background-size: 100vw 100vh;
+}
+
+/* --- Words --- */
+#words {
+  color: var(--red);
+  font-family: var(--main-font);
+  font-weight: 400;
+  font-size: 40px;
+  text-transform: capitalize;
+}
+/* --- Words Positions --- */
+#words span {
+  position: absolute;
+}
+.words-on-the-top {
+  top: 0.25em;
+  left: 15vw;
+}
+.words-on-the-bottom {
+  bottom: 0.35em;
+  left: 15vw;
+}
+.words-on-the-left {
+  top: 47%;
+  /* left: -14vh; */
+  left: -32.3vh;
+  rotate: -90deg;
+}
+.words-on-the-right {
+  top: 47%;
+  /* right: -14vh; */
+  right: -32.75vh;
+  rotate: 90deg;
+}
+
+/* Words animation */
+.srolling-effect-1 {
+  /* Apply animation to this element */
+  -webkit-animation: scrolling-left1 20s linear infinite;
+  animation: scrolling-left1 5s linear infinite;
+}
+
+/* Words animation */
+.srolling-effect-2 {
+  /* Apply animation to this element */
+  -webkit-animation: scrolling-left2 20s linear infinite;
+  animation: scrolling-left2 5s linear infinite;
+}
+
+/* Words animation */
+.srolling-effect-3 {
+  /* Apply animation to this element */
+  -webkit-animation: scrolling-left1 20s linear infinite;
+  animation: scrolling-left1 5s linear infinite;
+}
+
+
+
+/* scrolling-left is continuous/repeatly text */
+@keyframes scrolling-left1 {
+  0% {
+    transform: translateX(10%);
+    -webkit-transform: translateX(10%);
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-10%);
+    -webkit-transform: translateX(-10%);
+    opacity: 0;
+  }
+}
+
+@keyframes scrolling-left2 {
+  0% {
+    transform: translateX(-10%);
+    -webkit-transform: translateX(-10%);
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(10%);
+    -webkit-transform: translateX(10%);
+    opacity: 0;
+  }
+}
+
+/* --- Headline --- */
+#headline {
+  z-index: 2;
+  background-color: var(--white);
+  position: absolute;
+  top: 8%;
+  left: 6%;
+  width: 88vw;
+  height: 84vh;
+}
+
+#headline h1 {
+  color: var(--red);
+  position: absolute;
+  left: 8%;
+  top: 25%;
+  font-size: 150px;
+  opacity: 0;
+  transform: translateY(-70px);
+  animation: apparition 0.8s 1s ease-out forwards;
+}
+
+#headline h2 {
+  color: var(--red);
+  position: absolute;
+  left: 30%;
+  top: 32.5%;
+  font-size: 40px;
+  opacity: 0;
+}
+
+#headline h2 span:last-child{
+  text-decoration: underline var(--red);
+}
+
+.cta {
+  position: absolute;
+  left: 8.5%;
+  top: 50%;
+  text-decoration: none;
+  color: var(--red);
+  font-weight: bold;
+  font-size: 2rem;
+  font-family: var(--main-font);
+  text-transform: uppercase;
+  background-color: var(--white);
+  padding: 0.75rem 1rem;
+  border-radius: 0.25rem;
+  border: solid 0.125rem var(--red);
+  box-shadow: 0.25rem 0.25rem var(--red);
+  transition: transform 50ms, box-shadow 50ms;
+  opacity: 0;
+  transform: translateY(-50px);
+  animation: apparition 0.8s 1.2s ease-out forwards;
+  transition: 0.3s;
+}
+.cta:active{
+  transform: translate(0.125rem, 0.125rem);
+  box-shadow: 0.125rem 0.125rem var(--red);
+}
+.cta:hover {
+  background-color: var(--light-gray);
+}
+
+.date {
+  background-color: var(--white);
+  padding: 1rem;
+  border-radius: 0.25rem;
+  border: solid 0.125rem var(--red);
+}
+
+@keyframes apparition {
+  100% {
+      opacity: 1;
+      transform: none;
+  }
+}
+
+#headline svg {
+  width: 49%;
+  position: absolute;
+  right: 0;
+  bottom: -0.5%;
+}
+/* --- Wheel Animation --- */
+#wheel-rotate {
+  transform-box: fill-box;
+  transform-origin: 50% 46.5%;
+  animation-duration: 10s;
+  animation-name: rotate;
+  animation-delay: 1.5s;
+  animation-iteration-count: infinite;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* --- Cabin Animation --- */
+#red-left-cabine > path,
+#red-top-cabine > path,
+#red-right-cabine > path,
+#red-bottom-cabine > path{
+  animation-delay: 6s;
+  animation: tilt-shaking 3s ease-in-out infinite;
+}
+#white-top-right-cabine > path,
+#white-top-leftcabine > path,
+#white-bottom-right-cabine > path,
+#white-bottom-left-cabine > path {
+  animation-delay: 7s;
+  animation: tilt-shaking 3s ease-in-out infinite;
+}
+@keyframes tilt-shaking {
+  0% { 
+    transform: rotate(0deg); 
+  }
+  35% { 
+    transform-origin: top right;
+    transform: rotate(-0.5deg); 
+  }
+  75% { 
+    transform-origin: top center;
+    transform: rotate(1.5deg); 
+  }
+  35% { 
+    transform-origin: top right;
+    transform: rotate(-0.5deg); 
+  }
+  75% { 
+    transform-origin: top center;
+    transform: rotate(1.5deg); 
+  }
+  35% { 
+    transform-origin: top right;
+    transform: rotate(-0.5deg); 
+  }
+  100% { 
+    transform-origin: top center;
+    transform: rotate(0deg); 
+  }
+}
+
+/* --- --- Presentation Section --- --- */
+#presentation {
+  z-index: 1;
+  margin:-10vh auto 0 auto ;
+  padding: 30vh 0 0 0;
+  width: 80vw;
+  height: 70vh;
+}
+
+#presentation h2 {
+  padding: 2rem 0;
+  color: var(--red);
+  text-transform: uppercase;
+  font-size: 45px;
+}
+
+#presentation p {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: 500;
+  text-justify: auto;
+  color: var(--red);
+}
+
+#presentation iframe {
+  margin: 2.5rem 0;
+}
+
+/* --- --- Artistes Section --- --- */
+#artistes {
+  position: relative;
+  background-color: var(--red);
+  z-index: 2;
+  margin:30% auto 30% auto ;
+  padding: 30vh 0 0 0;
+  width: 100vw;
+  height: 180vh;
+}
+#artistes svg:first-child {
+  position: absolute;
+  top: -20%;
+}
+
+#artistes svg:last-child {
+  position: relative;
+  bottom: 60%;
+  z-index: -1;
+}
+
+#artistes-container {
+  width: 80vw;
+  margin: 0 auto;
+}
+
+#artistes h2 {
+  padding: 2rem 0;
+  color: var(--white);
+  text-transform: uppercase;
+  font-size: 45px;
+}
+
+.list-artistes {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  z-index: 4;
+}
+
+.card-artist {
+  background-color: var(--white);
+  border: solid 2px var(--red);
+  width: fit-content;
+  border-radius: 0.25rem;
+  margin-bottom: 2rem;
+}
+
+.card-artist img {
+  padding: 2.5rem;
+}
+
+.card-description {
+  border-top: solid 2px var(--red);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.card-description h3 {
+  color: var(--red);
+  font-size: 30px;;
+}
+
+.card-description p {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: 800;
+  color: var(--black);
+}
+
+.button {
+  position: relative;
+  left: 39%;
+  top: -22%;
+  text-decoration: none;
+  color: var(--red);
+  font-weight: bold;
+  font-size: 2rem;
+  font-family: var(--main-font);
+  text-transform: uppercase;
+  background-color: var(--white);
+  padding: 0.75rem 1rem;
+  border-radius: 0.25rem;
+  border: solid 0.125rem var(--red);
+  box-shadow: 0.25rem 0.25rem var(--red);
+  transition: transform 50ms, box-shadow 50ms;
+  opacity: 0;
+  transform: translateY(-50px);
+  animation: apparition 0.8s 1.2s ease-out forwards;
+  transition: 0.3s;
+}
+.button:active{
+  transform: translate(0.125rem, 0.125rem);
+  box-shadow: 0.125rem 0.125rem var(--red);
+}
+.button:hover {
+  background-color: var(--light-gray);
+}
+
+/* --- --- Tickets Section --- --- */
+#pass {
+  text-align: center;
+  margin: 0 auto 0 auto ;
+  padding: 30vh 0 0 0;
+  width: 100vw;
+  height: 100vh;
+  border: 7px solid var(--red);
+}
+
+#pass h2 {
+  padding: 2rem 0;
+  margin: -10% 0 10% 0;
+  color: var(--red);
+  text-transform: uppercase;
+  font-size: 45px;
+}
+
+#tickets a {
+  text-decoration: none;
+}
+
+/* --- --- Footer --- --- */
+footer {
+  padding: 2rem 0;
+  position: relative;
+  background-color: var(--red);
+  text-align: center;
+}
+
+.back-to-top {
+  margin: 0 auto 2rem auto;
+  width: fit-content;
+  background-color: var(--white);
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+
+.back-to-top:hover {
+  background-color: var(--light-gray);
+}
+
+footer h4 {
+  color: var(--white);
+  text-transform: capitalize;
+}
+
+footer h4 a {
+  text-decoration: underline;
+  color: var(--white);
+  transition: all 0.3s;
+}
+
+footer h4 a:hover {
+  color: var(--light-gray);
+}
+
+footer h5 {
+  margin-top: 0.25rem;
+  color: var(--white);
+  text-transform: lowercase;
+}
+/* ------------------------------------------------ 
+
+                    RESPONSIVE
+
+---------------------------------------------------*/
+
+/* --- Smartphone --- */
+@media only screen and (max-width: 767px) {
+  /* --- Words --- */
+#words {
+  color: var(--red);
+  font-family: var(--main-font);
+  font-weight: 500;
+  font-size: 18px;
+  text-transform: capitalize;
+}
+/* --- Words Positions --- */
+.words-on-the-top {
+  top: 0.25em;
+  left: 6vw;
+  width: 90vw;
+}
+.words-on-the-bottom {
+  bottom: 0.35em;
+  width: 90vw;
+  left: 6vw;
+}
+.words-on-the-left {
+  display: none;
+}
+.words-on-the-right {
+  display: none;
+}
+
+
+/* scrolling-left is continuous/repeatly text */
+@keyframes scrolling-left1 {
+  0% {
+    transform: none;
+  }
+}
+
+@keyframes scrolling-left2 {
+  0% {
+    transform: none;
+  }
+}
+
+/* --- Headline --- */
+#headline {
+  z-index: 2;
+  background-color: var(--white);
+  position: absolute;
+  top: 8%;
+  left: 6%;
+  width: 88vw;
+  height: 84vh;
+}
+
+#headline h1 {
+  color: var(--red);
+  position: relative;
+  left: 0;
+  top: 25%;
+  font-size: 100px;
+}
+
+#headline h2 {
+  display: none;
+}
+
+.cta {
+  z-index: 2;
+  position: relative;
+  left: 0;
+  top: 30vh;
+  text-decoration: none;
+  color: var(--red);
+  font-weight: bold;
+  font-size: 1.5rem;
+  font-family: var(--main-font);
+  text-transform: uppercase;
+  background-color: var(--white);
+  padding: 0.75rem 1rem;
+  border-radius: 0.25rem;
+  border: solid 0.125rem var(--red);
+  box-shadow: 0.25rem 0.25rem var(--red);
+  transition: transform 50ms, box-shadow 50ms;
+  opacity: 0;
+  transform: translateY(-50px);
+  animation: apparition 0.8s 1.2s ease-out forwards;
+  transition: 0.3s;
+}
+
+#headline svg {
+  z-index: 1;
+  width: 87vw;
+  position: absolute;
+  right: 1vw;
+  bottom: -0.5%;
+}
+
+/* --- --- Presentation Section --- --- */
+#presentation {
+  z-index: 1;
+  margin:-10vh auto 0 auto ;
+  padding: 30vh 0 0 0;
+  width: 80vw;
+  height: 70vh;
+}
+
+#presentation h2 {
+  padding: 2rem 0;
+  color: var(--red);
+  text-transform: uppercase;
+  font-size: 30px;
+}
+
+#presentation p {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: 500;
+  text-justify: auto;
+  color: var(--red);
+  font-size: 18px;
+}
+
+#presentation iframe {
+  margin: 2.5rem 0;
+  width: fit-content;
+  height: 100%;
+}
+
+/* --- --- Artistes Section --- --- */
+#artistes {
+  position: relative;
+  background-color: var(--red);
+  margin:90vh auto 50% auto ;
+  padding: 30vh 0 0 0;
+  width: 100vw;
+  height: fit-content;
+}
+#artistes svg:first-child {
+  position: absolute;
+  top: -10vh;
+  z-index: -1;
+}
+
+#artistes svg:last-child {
+  position: relative;
+  bottom: -5px;
+  z-index: -1;
+}
+
+#artistes-container {
+  width: 80vw;
+  margin: 0 auto;
+}
+
+#artistes h2 {
+  opacity: 1;
+  padding: 2rem 0;
+  color: var(--white);
+  text-transform: uppercase;
+  font-size: 45px;
+}
+
+.list-artistes {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  z-index: 4;
+}
+
+.card-artist {
+  background-color: var(--white);
+  border: solid 2px var(--red);
+  width: fit-content;
+  border-radius: 0.25rem;
+  margin-bottom: 2rem;
+}
+
+.card-artist img {
+  padding: 2.5rem;
+  width: 80vw;
+}
+
+.card-description {
+  border-top: solid 2px var(--red);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.card-description h3 {
+  color: var(--red);
+  font-size: 30px;;
+}
+
+.card-description p {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: 800;
+  color: var(--black);
+}
+
+.button {
+  position: relative;
+  left: 10vw;
+  top: -22%;
+  text-decoration: none;
+  color: var(--red);
+  font-weight: bold;
+  font-size: 1rem;
+  font-family: var(--main-font);
+  text-transform: uppercase;
+  background-color: var(--white);
+  padding: 0.75rem 1rem;
+  border-radius: 0.25rem;
+  border: solid 0.125rem var(--red);
+  box-shadow: 0.25rem 0.25rem var(--red);
+  transition: transform 50ms, box-shadow 50ms;
+  opacity: 0;
+  transform: translateY(-50px);
+  animation: apparition 0.8s 1.2s ease-out forwards;
+  transition: 0.3s;
+}
+.button:active{
+  transform: translate(0.125rem, 0.125rem);
+  box-shadow: 0.125rem 0.125rem var(--red);
+}
+
+/* --- --- Tickets Section --- --- */
+/* #pass {
+  display: none;
+} */
+
+#pass {
+  text-align: center;
+  margin: 0 auto 0 auto ;
+  padding: 30vh 0 0 0;
+  width: 100vw;
+  height: 100vh;
+  border: none;
+}
+
+#pass h2 {
+  padding: 0;
+  margin: -30% 0 25% 0;
+  color: var(--red);
+  text-transform: uppercase;
+  font-size: 30px;
+}
+#tickets img:first-child {
+  margin-bottom: 3rem;
+}
+
+#tickets img {
+  width: 80vw;
+  height: auto;
+}
+
+
+}
+/* --- Tablet --- */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  /* --- Words --- */
+#words {
+  color: var(--red);
+  font-family: var(--main-font);
+  font-weight: 500;
+  font-size: 30px;
+  text-transform: capitalize;
+}
+/* --- Words Positions --- */
+.words-on-the-top {
+  top: 0;
+  left: 6vw;
+  width: 90vw;
+}
+.words-on-the-bottom {
+  bottom: 0.1em;
+  width: 90vw;
+  left: 6vw;
+}
+.words-on-the-left {
+  display: none;
+}
+.words-on-the-right {
+  display: none;
+}
+
+
+/* scrolling-left is continuous/repeatly text */
+@keyframes scrolling-left1 {
+  0% {
+    transform: none;
+  }
+}
+
+@keyframes scrolling-left2 {
+  0% {
+    transform: none;
+  }
+}
+
+/* --- Headline --- */
+#headline {
+  z-index: 2;
+  background-color: var(--white);
+  position: absolute;
+  top: 8%;
+  left: 6%;
+  width: 88vw;
+  height: 84vh;
+}
+
+#headline h1 {
+  color: var(--red);
+  position: relative;
+  left: 0;
+  top: 10%;
+  font-size: 150px;
+}
+
+#headline h2 {
+  position: relative;
+  left: -9.5%;
+  top: 10%;
+  font-size: 40px;
+  opacity: 0;
+}
+#headline h2::after {
+  content: " ✦";
+}
+
+.cta {
+  z-index: 2;
+  position: relative;
+  left: 0;
+  top: 30vh;
+  text-decoration: none;
+  color: var(--red);
+  font-weight: bold;
+  font-size: 2rem;
+  font-family: var(--main-font);
+  text-transform: uppercase;
+  background-color: var(--white);
+  padding: 0.75rem 1rem;
+  border-radius: 0.25rem;
+  border: solid 0.125rem var(--red);
+  box-shadow: 0.25rem 0.25rem var(--red);
+  transition: transform 50ms, box-shadow 50ms;
+  opacity: 0;
+  transform: translateY(-50px);
+  animation: apparition 0.8s 1.2s ease-out forwards;
+  transition: 0.3s;
+}
+
+#headline svg {
+  z-index: 1;
+  width: 87vw;
+  position: absolute;
+  right: 1vw;
+  bottom: -0.5%;
+}
+
+/* --- --- Presentation Section --- --- */
+#presentation {
+  z-index: 1;
+  margin:-10vh auto 0 auto ;
+  padding: 30vh 0 0 0;
+  width: 80vw;
+  height: 70vh;
+}
+
+#presentation h2 {
+  padding: 2rem 0;
+  color: var(--red);
+  text-transform: uppercase;
+  font-size: 45px;
+}
+
+#presentation p {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: 500;
+  text-justify: auto;
+  color: var(--red);
+  font-size: 22px;
+}
+
+#presentation iframe {
+  margin: 2.5rem 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* --- --- Artistes Section --- --- */
+#artistes {
+  position: relative;
+  background-color: var(--red);
+  margin:90vh auto 50% auto ;
+  padding: 30vh 0 0 0;
+  width: 100vw;
+  height: fit-content;
+}
+#artistes svg:first-child {
+  position: absolute;
+  top: -15vh;
+  z-index: -1;
+}
+
+#artistes svg:last-child {
+  position: relative;
+  bottom: -5px;
+  z-index: -1;
+}
+
+#artistes-container {
+  width: 80vw;
+  margin: 0 auto;
+}
+
+#artistes h2 {
+  opacity: 1;
+  padding: 2rem 0;
+  color: var(--white);
+  text-transform: uppercase;
+  font-size: 45px;
+}
+
+.list-artistes {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  z-index: 4;
+}
+
+.card-artist {
+  background-color: var(--white);
+  border: solid 2px var(--red);
+  width: fit-content;
+  border-radius: 0.25rem;
+  margin-bottom: 2rem;
+}
+
+.card-artist img {
+  padding: 2.5rem;
+  width: 35vw;
+}
+
+.card-description {
+  border-top: solid 2px var(--red);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.card-description h3 {
+  color: var(--red);
+  font-size: 30px;;
+}
+
+.card-description p {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: 800;
+  color: var(--black);
+}
+
+.button {
+  position: relative;
+  left: 10vw;
+  top: -22%;
+  text-decoration: none;
+  color: var(--red);
+  font-weight: bold;
+  font-size: 1rem;
+  font-family: var(--main-font);
+  text-transform: uppercase;
+  background-color: var(--white);
+  padding: 0.75rem 1rem;
+  border-radius: 0.25rem;
+  border: solid 0.125rem var(--red);
+  box-shadow: 0.25rem 0.25rem var(--red);
+  transition: transform 50ms, box-shadow 50ms;
+  opacity: 0;
+  transform: translateY(-50px);
+  animation: apparition 0.8s 1.2s ease-out forwards;
+  transition: 0.3s;
+}
+.button:active{
+  transform: translate(0.125rem, 0.125rem);
+  box-shadow: 0.125rem 0.125rem var(--red);
+}
+
+/* --- --- Tickets Section --- --- */
+/* #pass {
+  display: none;
+} */
+
+#pass {
+  text-align: center;
+  margin: 0 auto 0 auto ;
+  padding: 30vh 0 0 0;
+  width: 100vw;
+  height: 100vh;
+  border: none;
+}
+
+#pass h2 {
+  padding: 0;
+  margin: -30% 0 25% 0;
+  color: var(--red);
+  text-transform: uppercase;
+  font-size: 45px;
+}
+#tickets img:first-child {
+  margin-bottom: 3rem;
+}
+
+#tickets img {
+  width: 80vw;
+  height: auto;
+}
+
+}
+/* --- Desktop --- */
+@media only screen and (min-width: 1024px) and (max-width: 1920px) {}
+/* --- Extra Desktop --- */
+@media only screen and (min-width: 1921px) {
+  /* --- Words --- */
+#words {
+  color: var(--red);
+  font-family: var(--main-font);
+  font-weight: 400;
+  font-size: 60px;
+  text-transform: capitalize;
+}
+/* --- Words Positions --- */
+#words span {
+  position: absolute;
+}
+.words-on-the-top {
+  top: 0.25em;
+  left: 10vw;
+}
+.words-on-the-bottom {
+  bottom: 0.35em;
+  left: 10vw;
+}
+.words-on-the-left {
+  top: 47%;
+  /* left: -14vh; */
+  left: -32.3vh;
+  rotate: -90deg;
+}
+.words-on-the-right {
+  top: 47%;
+  /* right: -14vh; */
+  right: -32.75vh;
+  rotate: 90deg;
+}
+
+/* --- Headline --- */
+#headline {
+  z-index: 2;
+  background-color: var(--white);
+  position: absolute;
+  top: 8%;
+  left: 6%;
+  width: 88vw;
+  height: 84vh;
+}
+
+#headline h1 {
+  color: var(--red);
+  position: absolute;
+  left: 8%;
+  top: 25%;
+  font-size: 190px;
+  opacity: 0;
+  transform: translateY(-70px);
+  animation: apparition 0.8s 1s ease-out forwards;
+}
+
+#headline h2 {
+  color: var(--red);
+  position: absolute;
+  left: 30%;
+  top: 29.5%;
+  font-size: 70px;
+  opacity: 0;
+}
+
+.cta {
+  position: absolute;
+  left: 8.5%;
+  top: 45%;
+  text-decoration: none;
+  color: var(--red);
+  font-weight: bold;
+  font-size: 3.5rem;
+  font-family: var(--main-font);
+  text-transform: uppercase;
+  background-color: var(--white);
+  padding: 1rem 1.5rem;
+  border-radius: 0.25rem;
+  border: solid 0.125rem var(--red);
+  box-shadow: 0.5rem 0.5rem var(--red);
+  transition: transform 50ms, box-shadow 50ms;
+  opacity: 0;
+  transform: translateY(-50px);
+  animation: apparition 0.8s 1.2s ease-out forwards;
+  transition: 0.3s;
+}
+.cta:active{
+  transform: translate(0.3rem, 0.3rem);
+  box-shadow: 0.3rem 0.3rem var(--red);
+}
+
+#headline svg {
+  width: 55%;
+  position: absolute;
+  right: 0;
+  bottom: -0.5%;
+}
+
+/* --- --- Presentation Section --- --- */
+#presentation {
+  z-index: 1;
+  margin:-10vh auto 0 auto ;
+  padding: 30vh 0 0 0;
+  width: 80vw;
+  height: 70vh;
+}
+
+#presentation h2 {
+  padding: 2rem 0;
+  color: var(--red);
+  text-transform: uppercase;
+  font-size: 80px;
+}
+
+#presentation p {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: 500;
+  text-justify: auto;
+  color: var(--red);
+  font-size: 25px;
+}
+
+#presentation iframe {
+  margin: 2.5rem 0;
+  width: 50vw;
+  height: 100%;
+}
+
+/* --- --- Artistes Section --- --- */
+#artistes {
+  position: relative;
+  background-color: var(--red);
+  z-index: 2;
+  margin:30% auto 30% auto ;
+  padding: 30vh 0 0 0;
+  width: 100vw;
+  height: 180vh;
+}
+#artistes svg:first-child {
+  position: absolute;
+  top: -15%;
+}
+
+#artistes svg:last-child {
+  position: relative;
+  bottom: 35vh;
+  z-index: -1;
+}
+
+
+#artistes h2 {
+  font-size: 80px;
+}
+
+.card-artist {
+  background-color: var(--white);
+  border: solid 2px var(--red);
+  width: fit-content;
+  border-radius: 0.25rem;
+  margin-bottom: 2rem;
+}
+
+.card-artist img {
+  width: 18vw;
+}
+
+.card-description {
+  border-top: solid 5px var(--red);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.card-description h3 {
+  color: var(--red);
+  font-size: 45px;;
+}
+
+.card-description p {
+  font-size: 25px;
+}
+
+.button {
+  left: 37%;
+  font-size: 3.5rem;
+  padding: 1rem 1.5rem;
+  border: solid 0.125rem var(--red);
+  box-shadow: 0.5rem 0.5rem var(--red);
+}
+.button:active{
+  transform: translate(0.3rem, 0.3rem);
+  box-shadow: 0.3rem 0.3rem var(--red);
+}
+/* --- --- Tickets Section --- --- */
+#pass {
+  text-align: center;
+  margin: 0 auto 0 auto ;
+  padding: 30vh 0 0 0;
+  width: 100vw;
+  height: 100vh;
+  border: 10px solid var(--red);
+}
+
+#pass h2 {
+  padding: 2rem 0;
+  margin: -8% 0 8% 0;
+  color: var(--red);
+  text-transform: uppercase;
+  font-size: 80px;
+}
+
+#tickets {
+  display: flex;
+  flex-direction: column;
+}
+
+#tickets a:first-child {
+  margin-bottom: 2rem;
+}
+
+}
