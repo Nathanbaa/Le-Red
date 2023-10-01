@@ -22,7 +22,7 @@ body {
   background-color: var(--white);
   scrollbar-color: var(--red) var(--white);
   scrollbar-width: thin;
-  scroll-behavior: smooth;
+  /*scroll-behavior: smooth;*/
 }
 
 /* width */
